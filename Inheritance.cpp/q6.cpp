@@ -11,18 +11,14 @@ class A{
     }
 };
 class B : public A{
-    public:
+    protected:
     B(){
         cout<<"age:22"<<endl;
     }
 };
 class C : public B{
-    public:
+    private:
     C(){
         cout<<"city:surat"<<endl;
     }
 };
-int main(){
-    C c;
-    
-}
