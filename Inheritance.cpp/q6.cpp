@@ -1,24 +1,34 @@
 // Write a C++ Program to show access to Private Public and Protected using 
 // // Inheritance 
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class A{
-    public:
-    A(){
-        cout<<"harsh limbachiy"<<endl;
+class Base {
+  private:
+    int pvt = 1;
+
+  protected:
+    int prot = 2;
+
+  public:
+    int pub = 3;
+    int getPVT() {
+      return pvt;
     }
 };
-class B : public A{
-    protected:
-    B(){
-        cout<<"age:22"<<endl;
+
+class PublicDerived : public Base {
+  public:
+    int getProt() {
+      return prot;
     }
 };
-class C : public B{
-    private:
-    C(){
-        cout<<"city:surat"<<endl;
-    }
-};
+
+int main() {
+  PublicDerived object1;
+  cout << "Private = " << object1.getPVT() << endl;
+  cout << "Protected = " << object1.getProt() << endl;
+  cout << "Public = " << object1.pub << endl;
+  return 0;
+}
